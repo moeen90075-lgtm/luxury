@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cordel Real Estate LLC | Luxury McAllen Real Estate</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            light: '#C6A14B',
+                            DEFAULT: '#BA943F',
+                            dark: '#AE853E',
+                        },
+                        luxury: {
+                            black: '#0D0D0D',
+                            darkGray: '#1A1A1A',
+                            charcoal: '#262626',
+                            cream: '#F9F6F0'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 1s ease-out forwards',
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glassmorphic {
+            background: rgba(13, 13, 13, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(198, 161, 75, 0.15);
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.215, 0.610, 0.355, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0D0D0D;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #AE853E;
+            border-radius: 4px;
+        }
+        iframe.video-bg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100vw;
+            height: 56.25vw; /* Given 16:9 aspect ratio */
+            min-height: 100vh;
+            min-width: 177.77vh; /* 100 * 16 / 9 */
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="bg-luxury-black text-white font-sans overflow-x-hidden">
+
+    <!-- HEADER / NAVIGATION ARRAY -->
+    <header class="fixed top-0 left-0 w-full z-50 glassmorphic transition-all duration-300" id="main-header">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-24 flex items-center justify-between">
+            <!-- Scaling Logo Asset Container -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-14 h-14 rounded-full overflow-hidden border border-gold-light/40 p-0.5 bg-luxury-darkGray transition-transform duration-500 group-hover:scale-105">
+                    <img src="https://instagram.fryk2-1.fna.fbcdn.net/v/t51.2885-19/473086810_1336624220839684_3565009483095954128_n.jpg?stp=dst-jpg_s150x150_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMxIn0&_nc_ht=instagram.fryk2-1.fna.fbcdn.net&_nc_cat=104&_nc_oc=Q6cZ2gE-1mTZKwBfH8pvygkQ4SVGZznpt5EKjmQ9zL_HOdoWKH60CqoMQqBrCJK5Xyik5EE&_nc_ohc=UoqJqKnZkdQQ7kNvwHqWPGA&_nc_gid=SIabSQNOMTgXT03j9nJRRQ&edm=APoiHPcBAAAA&ccb=7-5&oh=00_Af4xFsL3ncjzCXK6F_y2CacKhMthPLTrI5TaCTLiQM3_9g&oe=6A0FDC16&_nc_sid=22de04" alt="Cordel Real Estate Logo" class="w-full h-full object-cover rounded-full">
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-serif text-xl tracking-widest text-white group-hover:text-gold transition-colors duration-300">CORDEL</span>
+                    <span class="text-[9px] tracking-[0.3em] text-gold-light uppercase -mt-1">Real Estate LLC</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Array -->
+            <nav class="hidden lg:flex items-center gap-8 text-xs tracking-widest uppercase font-medium">
+                <a href="#hero" class="hover:text-gold transition-colors duration-300 relative py-2 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-gold after:transition-all hover:after:w-full">Home</a>
+                <a href="#about" class="hover:text-gold transition-colors duration-300 relative py-2 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-gold after:transition-all hover:after:w-full">About</a>
+                <a href="#neighborhoods" class="hover:text-gold transition-colors duration-300 relative py-2 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-gold after:transition-all hover:after:w-full">Neighborhoods</a>
+                <a href="#properties" class="hover:text-gold transition-colors duration-300 relative py-2 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-gold after:transition-all hover:after:w-full">Properties</a>
+                <a href="#why-choose-us" class="hover:text-gold transition-colors duration-300 relative py-2 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-gold after:transition-all hover:after:w-full">Value</a>
+                <a href="#team" class="hover:text-gold transition-colors duration-300 relative py-2 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-gold after:transition-all hover:after:w-full">Team</a>
+                <a href="#contact" class="hover:text-gold transition-colors duration-300 relative py-2 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-gold after:transition-all hover:after:w-full">Contact</a>
+            </nav>
+
+            <!-- Call Automation Trigger CTA -->
+            <div class="hidden sm:flex items-center gap-4">
+                <a href="tel:9564327682" class="border border-gold text-gold hover:bg-gold hover:text-luxury-black text-xs font-semibold uppercase tracking-widest px-6 py-3 transition-all duration-300 shadow-[0_0_15px_rgba(198,161,75,0.1)] hover:shadow-[0_0_25px_rgba(198,161,75,0.3)]">
+                    <i class="fa-solid fa-phone-volume mr-2 animate-pulse-slow"></i> 956-432-7682
+                </a>
+            </div>
+
+            <!-- Mobile Hamburger Button -->
+            <button class="lg:hidden text-white focus:outline-none" id="mobile-menu-btn" aria-label="Toggle Menu">
+                <div class="w-6 h-5 flex flex-col justify-between relative transform transition-transform duration-300">
+                    <span class="w-full h-[2px] bg-white transition-all duration-300 origin-left target-line-1"></span>
+                    <span class="w-full h-[2px] bg-white transition-all duration-300 target-line-2"></span>
+                    <span class="w-full h-[2px] bg-white transition-all duration-300 origin-left target-line-3"></span>
+                </div>
+            </button>
+        </div>
+
+        <!-- Mobile Adaptive Navigation Panel -->
+        <div class="lg:hidden fixed inset-0 top-24 bg-luxury-black/98 border-t border-luxury-charcoal transform translate-x-full transition-transform duration-500 ease-in-out z-40 overflow-y-auto" id="mobile-menu">
+            <div class="px-6 py-12 flex flex-col gap-6 text-center">
+                <a href="#hero" class="text-xl tracking-widest uppercase font-serif hover:text-gold mobile-nav-link">Home</a>
+                <a href="#about" class="text-xl tracking-widest uppercase font-serif hover:text-gold mobile-nav-link">About Identity</a>
+                <a href="#neighborhoods" class="text-xl tracking-widest uppercase font-serif hover:text-gold mobile-nav-link">Neighborhoods</a>
+                <a href="#properties" class="text-xl tracking-widest uppercase font-serif hover:text-gold mobile-nav-link">Featured Portfolios</a>
+                <a href="#why-choose-us" class="text-xl tracking-widest uppercase font-serif hover:text-gold mobile-nav-link">Our Value</a>
+                <a href="#team" class="text-xl tracking-widest uppercase font-serif hover:text-gold mobile-nav-link">Elite Agents</a>
+                <a href="#contact" class="text-xl tracking-widest uppercase font-serif hover:text-gold mobile-nav-link">Connect Now</a>
+                <div class="mt-8 border-t border-luxury-charcoal pt-8 flex flex-col items-center gap-4">
+                    <a href="tel:9564327682" class="w-full max-w-xs border border-gold text-gold py-4 tracking-widest uppercase text-sm font-semibold rounded-none bg-transparent hover:bg-gold hover:text-luxury-black transition-all">
+                        <i class="fa-solid fa-phone mr-2"></i> Call Portal
+                    </a>
+                    <a href="mailto:Info@cordelrealestate.com" class="text-xs text-neutral-400 tracking-wider">Info@cordelrealestate.com</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- HIGH-IMPACT HERO SECTION -->
+    <section id="hero" class="relative w-full h-screen overflow-hidden flex items-center justify-center pt-24">
+        <!-- Full-Screen Video Background Structure Framework -->
+        <div class="absolute inset-0 w-full h-full pointer-events-none overflow-hidden z-0">
+            <iframe class="video-bg" src="https://www.youtube.com/embed/iJb8P2fD15E?autoplay=1&mute=1&loop=1&playlist=iJb8P2fD15E&controls=0&showinfo=0&rel=0&modestbranding=1&enablejsapi=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+        
+        <!-- Deep Custom Opacity Overlay -->
+        <div class="absolute inset-0 bg-gradient-to-b from-luxury-black/90 via-luxury-black/75 to-luxury-black z-10"></div>
+
+        <!-- Content Frame Container -->
+        <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-20 mt-12 animate-fade-in-up">
+            <span class="text-gold text-xs font-semibold uppercase tracking-[0.4em] block mb-4">McAllen, Texas Elite Brokerage</span>
+            <h1 class="font-serif text-4xl sm:text-5xl md:text-7xl font-light tracking-wide leading-tight mb-6">
+                Curating Spaces of <br><span class="italic text-gold font-normal">Architectural Distinction</span>
+            </h1>
+            <p class="max-w-2xl mx-auto text-sm sm:text-base text-neutral-300 font-light tracking-wide leading-relaxed mb-12">
+                Discover uncompromised luxury modern estates in North McAllen and surrounding premier Texas enclaves. Built on flawless discretion and structural brilliance.
+            </p>
+
+            <!-- INTERACTIVE PROPERTY SEARCH BAR -->
+            <div class="w-full bg-luxury-darkGray/90 backdrop-blur-md p-4 lg:p-6 border border-gold-light/20 shadow-2xl max-w-4xl mx-auto">
+                <form id="search-filter-form" class="grid grid-cols-1 md:grid-cols-4 gap-4 items-center">
+                    <!-- Dropdown: Type -->
+                    <div class="flex flex-col text-left">
+                        <label class="text-[10px] tracking-widest uppercase font-semibold text-gold mb-2 block pl-1">Property Type</label>
+                        <div class="relative">
+                            <select id="filter-type" class="w-full bg-luxury-black border border-neutral-800 text-xs tracking-wider text-white py-3 px-4 appearance-none focus:outline-none focus:border-gold cursor-pointer rounded-none">
+                                <option value="all">All Portfolios</option>
+                                <option value="estate">Modern Estate</option>
+                                <option value="villa">Luxury Villa</option>
+                                <option value="penthouse">Penthouse Suite</option>
+                            </select>
+                            <i class="fa-solid fa-chevron-down absolute right-4 top-3.5 text-xs text-gold pointer-events-none"></i>
+                        </div>
+                    </div>
+
+                    <!-- Dropdown: Price Range -->
+                    <div class="flex flex-col text-left">
+                        <label class="text-[10px] tracking-widest uppercase font-semibold text-gold mb-2 block pl-1">Price Matrix</label>
+                        <div class="relative">
+                            <select id="filter-price" class="w-full bg-luxury-black border border-neutral-800 text-xs tracking-wider text-white py-3 px-4 appearance-none focus:outline-none focus:border-gold cursor-pointer rounded-none">
+                                <option value="all">Any Valuation</option>
+                                <option value="1-2">$1.0M – $2.5M</option>
+                                <option value="2-4">$2.5M – $4.5M</option>
+                                <option value="4+">$4.5M+</option>
+                            </select>
+                            <i class="fa-solid fa-chevron-down absolute right-4 top-3.5 text-xs text-gold pointer-events-none"></i>
+                        </div>
+                    </div>
+
+                    <!-- Dropdown: Beds -->
+                    <div class="flex flex-col text-left">
+                        <label class="text-[10px] tracking-widest uppercase font-semibold text-gold mb-2 block pl-1">Bedrooms</label>
+                        <div class="relative">
+                            <select id="filter-beds" class="w-full bg-luxury-black border border-neutral-800 text-xs tracking-wider text-white py-3 px-4 appearance-none focus:outline-none focus:border-gold cursor-pointer rounded-none">
+                                <option value="all">Any Scale</option>
+                                <option value="3">3+ Bedrooms</option>
+                                <option value="4">4+ Bedrooms</option>
+                                <option value="5">5+ Bedrooms</option>
+                            </select>
+                            <i class="fa-solid fa-chevron-down absolute right-4 top-3.5 text-xs text-gold pointer-events-none"></i>
+                        </div>
+                    </div>
+
+                    <!-- Filter Action Button -->
+                    <div class="pt-6">
+                        <button type="submit" class="w-full bg-gradient-to-r from-gold to-gold-dark hover:from-gold-dark hover:to-gold text-luxury-black font-semibold text-xs uppercase tracking-widest py-3.5 transition-all duration-300 shadow-md">
+                            <i class="fa-solid fa-magnifying-glass mr-2"></i> Search Registry
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Section Bottom Fade Divider -->
+        <div class="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-luxury-black to-transparent z-10"></div>
+    </section>
+
+    <!-- ABOUT CORPORATE IDENTITY -->
+    <section id="about" class="py-24 sm:py-32 relative z-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+            <!-- Text Column -->
+            <div class="lg:col-span-7 space-y-8 reveal">
+                <span class="text-gold text-xs font-semibold uppercase tracking-[0.3em] block">Corporate Legacy Architecture</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-light tracking-wide leading-tight">
+                    Redefining Modern Texas Living from our McAllen Headquarters
+                </h2>
+                <div class="w-20 h-[1px] bg-gold"></div>
+                <p class="text-neutral-400 font-light text-sm sm:text-base leading-relaxed">
+                    Strategically structured within the prestigious financial corridors at <strong class="text-white font-medium">1300 N 10th St, Ste #450, McAllen, TX</strong>, Cordel Real Estate LLC represents the highest tier of bespoke residential procurement. We offer discerning clients access to off-market developments and ultra-exclusive estates.
+                </p>
+                <p class="text-neutral-400 font-light text-sm sm:text-base leading-relaxed">
+                    Our platform bridges advanced algorithmic search tech with high-touch elite advisory services, setting an uncompromising standard for Texas property transactions.
+                </p>
+
+                <!-- Conversion Statistics Counter Blocks -->
+                <div class="grid grid-cols-3 gap-6 pt-6">
+                    <div class="border-l border-gold-light/30 pl-4">
+                        <div class="text-3xl sm:text-4xl font-serif text-gold font-light" data-count="1.4">0</div>
+                        <div class="text-[10px] uppercase tracking-widest text-neutral-400 mt-1">Billion Closed</div>
+                    </div>
+                    <div class="border-l border-gold-light/30 pl-4">
+                        <div class="text-3xl sm:text-4xl font-serif text-gold font-light" data-count="180">0</div>
+                        <div class="text-[10px] uppercase tracking-widest text-neutral-400 mt-1">Premium Estates</div>
+                    </div>
+                    <div class="border-l border-gold-light/30 pl-4">
+                        <div class="text-3xl sm:text-4xl font-serif text-gold font-light" data-count="99">0</div>
+                        <div class="text-[10px] uppercase tracking-widest text-neutral-400 mt-1">Client Retention %</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Beautiful Media Element Wrapper -->
+            <div class="lg:col-span-5 relative reveal">
+                <div class="absolute inset-0 border border-gold transform translate-x-4 translate-y-4 z-0"></div>
+                <div class="relative z-10 overflow-hidden h-[450px]">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Cordel Office Architecture" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105">
+                </div>
+                <div class="absolute -bottom-6 -left-6 bg-luxury-darkGray border border-gold-light/20 p-6 z-20 max-w-xs hidden sm:block">
+                    <p class="font-serif italic text-gold text-sm">"The ultimate luxury is absolute architectural clarity."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEIGHBORHOOD GRID ARRAY -->
+    <section id="neighborhoods" class="py-24 bg-luxury-darkGray relative z-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                <span class="text-gold text-xs font-semibold uppercase tracking-[0.3em] block mb-3">Regional Domain Mapping</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-light tracking-wide">Elite McAllen Territories</h2>
+                <div class="w-16 h-[1px] bg-gold mx-auto mt-4"></div>
+            </div>
+
+            <!-- Asymmetric Grid Structure -->
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+                <!-- Zone 1 -->
+                <div class="md:col-span-7 relative group overflow-hidden h-80 border border-neutral-800 reveal">
+                    <div class="absolute inset-0 bg-luxury-black/40 group-hover:bg-luxury-black/20 transition-colors duration-500 z-10"></div>
+                    <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1000&q=80" alt="North McAllen Enclaves" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 scale-100 group-hover:scale-105">
+                    <div class="absolute inset-x-0 bottom-0 p-8 bg-gradient-to-t from-luxury-black via-luxury-black/60 to-transparent z-20">
+                        <span class="text-gold text-[10px] tracking-[0.2em] uppercase block mb-1">District Domain Alpha</span>
+                        <h3 class="font-serif text-xl text-white tracking-wide">North McAllen Luxury Corridor</h3>
+                        <p class="text-xs text-neutral-300 font-light mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 max-w-md">Private gated parameters, sweeping floor plans, and elite community spacing structures.</p>
+                    </div>
+                </div>
+
+                <!-- Zone 2 -->
+                <div class="md:col-span-5 relative group overflow-hidden h-80 border border-neutral-800 reveal">
+                    <div class="absolute inset-0 bg-luxury-black/40 group-hover:bg-luxury-black/20 transition-colors duration-500 z-10"></div>
+                    <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80" alt="Bentsen Palm Matrix" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 scale-100 group-hover:scale-105">
+                    <div class="absolute inset-x-0 bottom-0 p-8 bg-gradient-to-t from-luxury-black via-luxury-black/60 to-transparent z-20">
+                        <span class="text-gold text-[10px] tracking-[0.2em] uppercase block mb-1">District Domain Beta</span>
+                        <h3 class="font-serif text-xl text-white tracking-wide">The Orchard & Shary Estates</h3>
+                        <p class="text-xs text-neutral-300 font-light mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 max-w-md">Lush natural integrations combined with high-end security frameworks.</p>
+                    </div>
+                </div>
+
+                <!-- Zone 3 -->
+                <div class="md:col-span-5 relative group overflow-hidden h-80 border border-neutral-800 reveal">
+                    <div class="absolute inset-0 bg-luxury-black/40 group-hover:bg-luxury-black/20 transition-colors duration-500 z-10"></div>
+                    <img src="https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=800&q=80" alt="Tres Lagos Layout" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 scale-100 group-hover:scale-105">
+                    <div class="absolute inset-x-0 bottom-0 p-8 bg-gradient-to-t from-luxury-black via-luxury-black/60 to-transparent z-20">
+                        <span class="text-gold text-[10px] tracking-[0.2em] uppercase block mb-1">District Domain Gamma</span>
+                        <h3 class="font-serif text-xl text-white tracking-wide">Tres Lagos Master Estates</h3>
+                        <p class="text-xs text-neutral-300 font-light mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 max-w-md">Ultra-modern architectural rules featuring private lakes and customized smart facilities.</p>
+                    </div>
+                </div>
+
+                <!-- Zone 4 -->
+                <div class="md:col-span-7 relative group overflow-hidden h-80 border border-neutral-800 reveal">
+                    <div class="absolute inset-0 bg-luxury-black/40 group-hover:bg-luxury-black/20 transition-colors duration-500 z-10"></div>
+                    <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1000&q=80" alt="Mission Reserve Matrix" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 scale-100 group-hover:scale-105">
+                    <div class="absolute inset-x-0 bottom-0 p-8 bg-gradient-to-t from-luxury-black via-luxury-black/60 to-transparent z-20">
+                        <span class="text-gold text-[10px] tracking-[0.2em] uppercase block mb-1">District Domain Delta</span>
+                        <h3 class="font-serif text-xl text-white tracking-wide">Cimarron Country Club Enclaves</h3>
+                        <p class="text-xs text-neutral-300 font-light mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 max-w-md">Premium resort-tier living with private fairways and customized leisure architecture.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INTERACTIVE FEATURED PROPERTIES -->
+    <section id="properties" class="py-24 relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 reveal">
+            <div>
+                <span class="text-gold text-xs font-semibold uppercase tracking-[0.3em] block mb-3">Bespoke Structural Assets</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-light tracking-wide">The Featured Portfolio Registry</h2>
+                <div class="w-16 h-[1px] bg-gold mt-4"></div>
+            </div>
+            <!-- Category Filtering Mock Links -->
+            <div class="flex items-center gap-6 mt-6 md:mt-0 text-xs tracking-widest uppercase text-neutral-400 font-medium">
+                <button class="text-gold border-b border-gold pb-1" onclick="filterPropertyGrid('all')">Show All</button>
+                <button class="hover:text-gold transition-colors pb-1" onclick="filterPropertyGrid('estate')">Estates</button>
+                <button class="hover:text-gold transition-colors pb-1" onclick="filterPropertyGrid('villa')">Villas</button>
+                <button class="hover:text-gold transition-colors pb-1" onclick="filterPropertyGrid('penthouse')">Penthouses</button>
+            </div>
+        </div>
+
+        <!-- Property Grid Container -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="property-registry-grid">
+            
+            <!-- Card 1 -->
+            <div class="bg-luxury-darkGray border border-neutral-800 group overflow-hidden relative reveal property-card" data-type="estate" data-price="2.9" data-beds="5">
+                <div class="relative overflow-hidden h-72">
+                    <!-- Absolute-positioned status badge -->
+                    <span class="absolute top-4 left-4 bg-gold text-luxury-black font-semibold text-[9px] tracking-widest uppercase px-3 py-1.5 z-20">Exclusive Registry</span>
+                    <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=700&q=80" alt="The Luminary Estate" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 lazy-load">
+                    <!-- Fluid state change overlay -->
+                    <div class="absolute inset-0 bg-luxury-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center z-10">
+                        <button onclick="openQuickView('The Luminary Estate', '$2,950,000', 'North McAllen, TX', '5 Beds', '6 Baths', '6,400 Sq Ft', 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=700&q=80')" class="bg-white text-luxury-black font-semibold text-xs tracking-widest uppercase px-6 py-3 border border-white hover:bg-transparent hover:text-white transition-all duration-300 rounded-none">Quick Inspect</button>
+                    </div>
+                </div>
+                <div class="p-6 space-y-4">
+                    <span class="text-xs text-gold font-medium tracking-wider uppercase">North McAllen</span>
+                    <h3 class="font-serif text-xl text-white group-hover:text-gold transition-colors duration-300">The Luminary Modern Estate</h3>
+                    <div class="flex items-center justify-between text-xs text-neutral-400 font-light border-y border-neutral-800/60 py-3">
+                        <span><i class="fa-solid fa-bed text-gold mr-1"></i> 5 Beds</span>
+                        <span><i class="fa-solid fa-bath text-gold mr-1"></i> 6 Baths</span>
+                        <span><i class="fa-solid fa-vector-square text-gold mr-1"></i> 6,400 Sq Ft</span>
+                    </div>
+                    <div class="flex justify-between items-center pt-2">
+                        <span class="font-serif text-xl text-gold-light">$2,950,000</span>
+                        <a href="#contact" class="text-[11px] tracking-widest uppercase text-white font-medium hover:text-gold transition-colors">Inquire <i class="fa-solid fa-arrow-right ml-1 text-[9px]"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="bg-luxury-darkGray border border-neutral-800 group overflow-hidden relative reveal property-card" data-type="villa" data-price="4.2" data-beds="4">
+                <div class="relative overflow-hidden h-72">
+                    <span class="absolute top-4 left-4 bg-neutral-900 text-gold border border-gold/30 font-semibold text-[9px] tracking-widest uppercase px-3 py-1.5 z-20">Off-Market Opportunity</span>
+                    <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=700&q=80" alt="The Obsidian Villa" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 lazy-load">
+                    <div class="absolute inset-0 bg-luxury-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center z-10">
+                        <button onclick="openQuickView('The Obsidian Villa', '$4,150,000', 'Shary Estates, McAllen', '4 Beds', '5 Baths', '5,800 Sq Ft', 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=700&q=80')" class="bg-white text-luxury-black font-semibold text-xs tracking-widest uppercase px-6 py-3 border border-white hover:bg-transparent hover:text-white transition-all duration-300 rounded-none">Quick Inspect</button>
+                    </div>
+                </div>
+                <div class="p-6 space-y-4">
+                    <span class="text-xs text-gold font-medium tracking-wider uppercase">Shary Estates</span>
+                    <h3 class="font-serif text-xl text-white group-hover:text-gold transition-colors duration-300">The Obsidian Courtyard Villa</h3>
+                    <div class="flex items-center justify-between text-xs text-neutral-400 font-light border-y border-neutral-800/60 py-3">
+                        <span><i class="fa-solid fa-bed text-gold mr-1"></i> 4 Beds</span>
+                        <span><i class="fa-solid fa-bath text-gold mr-1"></i> 5 Baths</span>
+                        <span><i class="fa-solid fa-vector-square text-gold mr-1"></i> 5,800 Sq Ft</span>
+                    </div>
+                    <div class="flex justify-between items-center pt-2">
+                        <span class="font-serif text-xl text-gold-light">$4,150,000</span>
+                        <a href="#contact" class="text-[11px] tracking-widest uppercase text-white font-medium hover:text-gold transition-colors">Inquire <i class="fa-solid fa-arrow-right ml-1 text-[9px]"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="bg-luxury-darkGray border border-neutral-800 group overflow-hidden relative reveal property-card" data-type="penthouse" data-price="1.8" data-beds="3">
+                <div class="relative overflow-hidden h-72">
+                    <span class="absolute top-4 left-4 bg-gold text-luxury-black font-semibold text-[9px] tracking-widest uppercase px-3 py-1.5 z-20">Newly Listed</span>
+                    <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=700&q=80" alt="Apex Glass Tower" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 lazy-load">
+                    <div class="absolute inset-0 bg-luxury-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center z-10">
+                        <button onclick="openQuickView('Apex Glass Tower Penthouse', '$1,850,000', 'Downtown McAllen Corridor', '3 Beds', '3.5 Baths', '3,900 Sq Ft', 'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=700&q=80')" class="bg-white text-luxury-black font-semibold text-xs tracking-widest uppercase px-6 py-3 border border-white hover:bg-transparent hover:text-white transition-all duration-300 rounded-none">Quick Inspect</button>
+                    </div>
+                </div>
+                <div class="p-6 space-y-4">
+                    <span class="text-xs text-gold font-medium tracking-wider uppercase">Downtown Corridor</span>
+                    <h3 class="font-serif text-xl text-white group-hover:text-gold transition-colors duration-300">Apex Glass Tower Penthouse</h3>
+                    <div class="flex items-center justify-between text-xs text-neutral-400 font-light border-y border-neutral-800/60 py-3">
+                        <span><i class="fa-solid fa-bed text-gold mr-1"></i> 3 Beds</span>
+                        <span><i class="fa-solid fa-bath text-gold mr-1"></i> 3.5 Baths</span>
+                        <span><i class="fa-solid fa-vector-square text-gold mr-1"></i> 3,900 Sq Ft</span>
+                    </div>
+                    <div class="flex justify-between items-center pt-2">
+                        <span class="font-serif text-xl text-gold-light">$1,850,000</span>
+                        <a href="#contact" class="text-[11px] tracking-widest uppercase text-white font-medium hover:text-gold transition-colors">Inquire <i class="fa-solid fa-arrow-right ml-1 text-[9px]"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RESPONSIVE QUICK-VIEW OVERLAY MODAL HOOK -->
+    <div id="quick-view-modal" class="fixed inset-0 bg-luxury-black/90 backdrop-blur-md z-50 hidden items-center justify-center p-4">
+        <div class="bg-luxury-darkGray border border-gold-light/30 max-w-3xl w-full max-h-[90vh] overflow-y-auto relative p-6 sm:p-8 flex flex-col md:flex-row gap-8">
+            <button onclick="closeQuickView()" class="absolute top-4 right-4 text-white hover:text-gold text-xl focus:outline-none"><i class="fa-solid fa-xmark"></i></button>
+            <div class="w-full md:w-1/2 h-64 md:h-auto overflow-hidden">
+                <img id="modal-img" src="" alt="" class="w-full h-full object-cover">
+            </div>
+            <div class="w-full md:w-1/2 flex flex-col justify-between space-y-6">
+                <div>
+                    <span id="modal-loc" class="text-xs text-gold tracking-widest uppercase font-medium"></span>
+                    <h3 id="modal-title" class="font-serif text-2xl text-white mt-1"></h3>
+                    <div id="modal-price" class="font-serif text-xl text-gold-light mt-2"></div>
+                </div>
+                <div class="border-y border-neutral-800 py-4 grid grid-cols-3 text-xs text-neutral-400 gap-2">
+                    <div><span class="block text-gold font-medium uppercase text-[10px] tracking-wider">Bedrooms</span><span id="modal-beds"></span></div>
+                    <div><span class="block text-gold font-medium uppercase text-[10px] tracking-wider">Bathrooms</span><span id="modal-baths"></span></div>
+                    <div><span class="block text-gold font-medium uppercase text-[10px] tracking-wider">Total Area</span><span id="modal-size"></span></div>
+                </div>
+                <p class="text-xs text-neutral-400 font-light leading-relaxed">This exclusive property listing features custom industrial premium fittings, full integration with smart house architectures, and privacy configurations verified by Cordel Elite Standards.</p>
+                <a href="#contact" onclick="closeQuickView()" class="w-full bg-gold text-luxury-black text-center text-xs tracking-widest font-semibold uppercase py-3 block hover:bg-gold-dark transition-all">Initiate Full Acquisition Request</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- UNIQUE VALUE GRID (WHY CHOOSE US) -->
+    <section id="why-choose-us" class="py-24 bg-luxury-darkGray relative z-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-20 reveal">
+                <span class="text-gold text-xs font-semibold uppercase tracking-[0.3em] block mb-3">System Execution Values</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-light tracking-wide">The Cordel Operational Advantage</h2>
+                <div class="w-16 h-[1px] bg-gold mx-auto mt-4"></div>
+            </div>
+
+            <!-- Performance Benefit Matrices -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <!-- Matrix 1 -->
+                <div class="bg-luxury-black p-8 border border-neutral-800 hover:border-gold/30 group transition-all duration-300 transform hover:-translate-y-2 text-center">
+                    <div class="w-16 h-16 border border-gold rounded-full flex items-center justify-center mx-auto mb-6 transition-transform duration-500 group-hover:rotate-12 bg-luxury-darkGray">
+                        <i class="fa-solid fa-shield-halved text-gold text-xl"></i>
+                    </div>
+                    <h3 class="font-serif text-xl text-white mb-4">Discreet Capital Shielding</h3>
+                    <p class="text-xs text-neutral-400 font-light leading-relaxed">Absolute execution privacy for high-net-worth portfolio movements and sensitive Texas off-market property transfers.</p>
+                </div>
+
+                <!-- Matrix 2 -->
+                <div class="bg-luxury-black p-8 border border-neutral-800 hover:border-gold/30 group transition-all duration-300 transform hover:-translate-y-2 text-center">
+                    <div class="w-16 h-16 border border-gold rounded-full flex items-center justify-center mx-auto mb-6 transition-transform duration-500 group-hover:rotate-12 bg-luxury-darkGray">
+                        <i class="fa-solid fa-chart-line text-gold text-xl"></i>
+                    </div>
+                    <h3 class="font-serif text-xl text-white mb-4">Algorithmic Yield Discovery</h3>
+                    <p class="text-xs text-neutral-400 font-light leading-relaxed">Utilizing internal valuation frameworks to identify asymmetric residential opportunities before public domain syndication.</p>
+                </div>
+
+                <!-- Matrix 3 -->
+                <div class="bg-luxury-black p-8 border border-neutral-800 hover:border-gold/30 group transition-all duration-300 transform hover:-translate-y-2 text-center">
+                    <div class="w-16 h-16 border border-gold rounded-full flex items-center justify-center mx-auto mb-6 transition-transform duration-500 group-hover:rotate-12 bg-luxury-darkGray">
+                        <i class="fa-solid fa-handshake-angle text-gold text-xl"></i>
+                    </div>
+                    <h3 class="font-serif text-xl text-white mb-4">Bespoke Advisory Structure</h3>
+                    <p class="text-xs text-neutral-400 font-light leading-relaxed">Permanent connectivity access to specialized architectural and regulatory legal structures at our McAllen office hub.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AGENT TEAM COMPONENTS -->
+    <section id="team" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
+        <div class="text-center max-w-3xl mx-auto mb-20 reveal">
+            <span class="text-gold text-xs font-semibold uppercase tracking-[0.3em] block mb-3">Elite Advisory Council</span>
+            <h2 class="font-serif text-3xl sm:text-4xl font-light tracking-wide">Commanding Directors</h2>
+            <div class="w-16 h-[1px] bg-gold mx-auto mt-4"></div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Agent 1 -->
+            <div class="bg-luxury-darkGray border border-neutral-800 overflow-hidden group reveal">
+                <div class="relative h-96 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=500&q=80" alt="Charles Cordel" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 lazy-load">
+                    <div class="absolute inset-0 bg-gradient-to-t from-luxury-black via-transparent to-transparent opacity-60"></div>
+                    <!-- Social list -->
+                    <div class="absolute bottom-4 left-4 flex gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
+                        <a href="#" class="w-8 h-8 rounded-full bg-luxury-black/80 border border-gold/30 flex items-center justify-center text-gold hover:bg-gold hover:text-luxury-black text-xs transition-colors"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-luxury-black/80 border border-gold/30 flex items-center justify-center text-gold hover:bg-gold hover:text-luxury-black text-xs transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="p-6 border-t border-neutral-800 bg-luxury-darkGray">
+                    <span class="text-[10px] tracking-widest text-gold uppercase block font-medium mb-1">Founder & Chief Procurer</span>
+                    <h4 class="font-serif text-xl text-white">Charles Cordel</h4>
+                    <a href="mailto:charles@cordelrealestate.com" class="text-xs text-neutral-400 mt-2 block hover:text-gold transition-colors">charles@cordelrealestate.com</a>
+                </div>
+            </div>
+
+            <!-- Agent 2 -->
+            <div class="bg-luxury-darkGray border border-neutral-800 overflow-hidden group reveal">
+                <div class="relative h-96 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=500&q=80" alt="Victoria Salazar" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 lazy-load">
+                    <div class="absolute inset-0 bg-gradient-to-t from-luxury-black via-transparent to-transparent opacity-60"></div>
+                    <div class="absolute bottom-4 left-4 flex gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
+                        <a href="#" class="w-8 h-8 rounded-full bg-luxury-black/80 border border-gold/30 flex items-center justify-center text-gold hover:bg-gold hover:text-luxury-black text-xs transition-colors"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-luxury-black/80 border border-gold/30 flex items-center justify-center text-gold hover:bg-gold hover:text-luxury-black text-xs transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="p-6 border-t border-neutral-800 bg-luxury-darkGray">
+                    <span class="text-[10px] tracking-widest text-gold uppercase block font-medium mb-1">Managing Director – McAllen Enclaves</span>
+                    <h4 class="font-serif text-xl text-white">Victoria Salazar</h4>
+                    <a href="mailto:victoria@cordelrealestate.com" class="text-xs text-neutral-400 mt-2 block hover:text-gold transition-colors">victoria@cordelrealestate.com</a>
+                </div>
+            </div>
+
+            <!-- Agent 3 -->
+            <div class="bg-luxury-darkGray border border-neutral-800 overflow-hidden group reveal">
+                <div class="relative h-96 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=500&q=80" alt="Marcus Sterling" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 lazy-load">
+                    <div class="absolute inset-0 bg-gradient-to-t from-luxury-black via-transparent to-transparent opacity-60"></div>
+                    <div class="absolute bottom-4 left-4 flex gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
+                        <a href="#" class="w-8 h-8 rounded-full bg-luxury-black/80 border border-gold/30 flex items-center justify-center text-gold hover:bg-gold hover:text-luxury-black text-xs transition-colors"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-luxury-black/80 border border-gold/30 flex items-center justify-center text-gold hover:bg-gold hover:text-luxury-black text-xs transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="p-6 border-t border-neutral-800 bg-luxury-darkGray">
+                    <span class="text-[10px] tracking-widest text-gold uppercase block font-medium mb-1">Senior Structural Analyst</span>
+                    <h4 class="font-serif text-xl text-white">Marcus Sterling</h4>
+                    <a href="mailto:marcus@cordelrealestate.com" class="text-xs text-neutral-400 mt-2 block hover:text-gold transition-colors">marcus@cordelrealestate.com</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIAL SLIDER PLATFORM -->
+    <section class="py-24 bg-luxury-darkGray relative z-20 overflow-hidden">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="text-center mb-12">
+                <i class="fa-solid fa-quote-left text-gold/20 text-6xl block mb-2"></i>
+                <span class="text-gold text-xs font-semibold uppercase tracking-[0.3em] block">Verified Portfolio Endorsements</span>
+            </div>
+
+            <!-- Slider Wrapper -->
+            <div class="relative min-h-[250px] flex items-center justify-center">
+                
+                <!-- Slide 1 -->
+                <div class="testimonial-slide transition-all duration-700 absolute inset-0 flex flex-col items-center text-center opacity-100 transform translate-x-0">
+                    <p class="font-serif text-lg sm:text-2xl text-neutral-200 font-light italic max-w-3xl leading-relaxed">
+                        "Cordel's off-market registry facilitated our acquisition in North McAllen with flawless execution. Their legal discrete pipeline framework provided absolute protection for our corporate investment footprint."
+                    </p>
+                    <div class="mt-8 flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full overflow-hidden border border-gold/40">
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=100&q=80" alt="Client Avatar 1" class="w-full h-full object-cover">
+                        </div>
+                        <div class="text-left">
+                            <h5 class="text-sm font-semibold tracking-wider text-white">Alexander Vance</h5>
+                            <span class="text-[10px] text-gold uppercase tracking-widest">Vance Tech Infrastructure Group</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="testimonial-slide transition-all duration-700 absolute inset-0 flex flex-col items-center text-center opacity-0 transform translate-x-full">
+                    <p class="font-serif text-lg sm:text-2xl text-neutral-200 font-light italic max-w-3xl leading-relaxed">
+                        "The structural analytical standard demonstrated by Charles Cordel and his team surpassed all traditional residential experiences. Every metric was perfectly optimized from day one."
+                    </p>
+                    <div class="mt-8 flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full overflow-hidden border border-gold/40">
+                            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=100&q=80" alt="Client Avatar 2" class="w-full h-full object-cover">
+                        </div>
+                        <div class="text-left">
+                            <h5 class="text-sm font-semibold tracking-wider text-white">Dr. H. Escobedo</h5>
+                            <span class="text-[10px] text-gold uppercase tracking-widest">Medical Systems Director</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Operational Navigation Handlers -->
+            <div class="flex justify-center items-center gap-4 mt-12 z-30 relative">
+                <button onclick="prevSlide()" class="w-10 h-10 border border-neutral-800 hover:border-gold rounded-none flex items-center justify-center text-neutral-400 hover:text-gold bg-luxury-black/40 transition-colors" aria-label="Previous Endorsement"><i class="fa-solid fa-chevron-left text-xs"></i></button>
+                <button onclick="nextSlide()" class="w-10 h-10 border border-neutral-800 hover:border-gold rounded-none flex items-center justify-center text-neutral-400 hover:text-gold bg-luxury-black/40 transition-colors" aria-label="Next Endorsement"><i class="fa-solid fa-chevron-right text-xs"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONVERSION CONTACT FRAME -->
+    <section id="contact" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+            
+            <!-- High-Conversion entry form holding user fields -->
+            <div class="lg:col-span-7 bg-luxury-darkGray p-8 sm:p-10 border border-neutral-800 reveal">
+                <span class="text-gold text-xs font-semibold uppercase tracking-[0.3em] block mb-2">Acquisition Intent Intake</span>
+                <h3 class="font-serif text-2xl sm:text-3xl text-white tracking-wide mb-8">Initiate Confidential Consultation</h3>
+                
+                <form id="acquisition-form" class="space-y-6" onsubmit="handleFormSubmission(event)">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div class="flex flex-col">
+                            <label class="text-[10px] uppercase tracking-widest font-semibold text-gold mb-2 pl-1">Full Identity Name</label>
+                            <input type="text" required placeholder="Johnathan Doe" class="w-full bg-luxury-black border border-neutral-800 text-xs tracking-wider text-white py-3.5 px-4 focus:outline-none focus:border-gold rounded-none transition-colors">
+                        </div>
+                        <div class="flex flex-col">
+                            <label class="text-[10px] uppercase tracking-widest font-semibold text-gold mb-2 pl-1">Secure Email Address</label>
+                            <input type="email" required placeholder="name@domain.com" class="w-full bg-luxury-black border border-neutral-800 text-xs tracking-wider text-white py-3.5 px-4 focus:outline-none focus:border-gold rounded-none transition-colors">
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div class="flex flex-col">
+                            <label class="text-[10px] uppercase tracking-widest font-semibold text-gold mb-2 pl-1">Direct Phone Link</label>
+                            <input type="tel" placeholder="956-000-0000" class="w-full bg-luxury-black border border-neutral-800 text-xs tracking-wider text-white py-3.5 px-4 focus:outline-none focus:border-gold rounded-none transition-colors">
+                        </div>
+                        <div class="flex flex-col">
+                            <label class="text-[10px] uppercase tracking-widest font-semibold text-gold mb-2 pl-1">Asset Capital Frame</label>
+                            <select class="w-full bg-luxury-black border border-neutral-800 text-xs tracking-wider text-white py-3.5 px-4 focus:outline-none focus:border-gold rounded-none cursor-pointer appearance-none">
+                                <option>$1.0M – $2.5M Liquidity</option>
+                                <option>$2.5M – $4.5M Liquidity</option>
+                                <option>$4.5M+ Enterprise Level</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="flex flex-col">
+                        <label class="text-[10px] uppercase tracking-widest font-semibold text-gold mb-2 pl-1">Context Query Parameters</label>
+                        <textarea rows="4" placeholder="Specify off-market geographic parameters or preferred listing profiles..." class="w-full bg-luxury-black border border-neutral-800 text-xs tracking-wider text-white py-3.5 px-4 focus:outline-none focus:border-gold rounded-none transition-colors"></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full bg-gradient-to-r from-gold to-gold-dark text-luxury-black text-xs font-semibold uppercase tracking-widest py-4 hover:shadow-[0_0_20px_rgba(198,161,75,0.2)] transition-all duration-300">
+                        Dispatch Secure Request Frame
+                    </button>
+                </form>
+                <div id="form-success" class="hidden text-xs text-emerald-400 font-medium tracking-wide mt-4 text-center bg-emerald-950/20 py-3 border border-emerald-800/40">
+                    Transmission validated. Your dedicated advisory assignment framework is initiating within 12 hours.
+                </div>
+            </div>
+
+            <!-- Maps reference layout module and contact information array -->
+            <div class="lg:col-span-5 space-y-8 reveal">
+                <div class="space-y-4">
+                    <span class="text-gold text-xs font-semibold uppercase tracking-[0.3em] block">Central Command Array</span>
+                    <h3 class="font-serif text-2xl text-white tracking-wide">Physical Headquarters</h3>
+                </div>
+
+                <div class="space-y-4 text-xs tracking-wider text-neutral-400 font-light leading-relaxed">
+                    <p class="flex items-start gap-3">
+                        <i class="fa-solid fa-location-dot text-gold text-sm mt-0.5 w-4"></i>
+                        <span>1300 N 10th St, Ste #450,<br>McAllen, TX, United States, Texas</span>
+                    </p>
+                    <p class="flex items-center gap-3">
+                        <i class="fa-solid fa-phone text-gold text-sm w-4"></i>
+                        <a href="tel:9564327682" class="hover:text-gold text-white font-medium transition-colors">956-432-7682</a>
+                    </p>
+                    <p class="flex items-center gap-3">
+                        <i class="fa-solid fa-envelope text-gold text-sm w-4"></i>
+                        <a href="mailto:Info@cordelrealestate.com" class="hover:text-gold text-white font-medium transition-colors">Info@cordelrealestate.com</a>
+                    </p>
+                </div>
+
+                <!-- Interactive Map Integration Placeholder / Embedded maps component using standard styling boundaries -->
+                <div class="w-full h-64 border border-neutral-800 grayscale invert opacity-80 contrast-125 group relative overflow-hidden">
+                    <!-- Standard Embedded Google Map Mock centered around McAllen professional office parameters -->
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3578.4714138092283!2d-98.2335198!3d26.2138865!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8665a16df16b0dfd%3A0xc665b161f3a9e3a6!2s1300%20N%2010th%20St%20%23450%2C%20McAllen%2C%20TX%2078501!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus" class="w-full h-full border-0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GLOBAL STRUCTURAL FOOTER -->
+    <footer class="bg-luxury-darkGray border-t border-neutral-800/80 pt-16 pb-8 relative z-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-12 gap-12 pb-12 border-b border-neutral-800">
+            
+            <!-- Column 1: Identity Base -->
+            <div class="md:col-span-4 space-y-4">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full overflow-hidden border border-gold-light/40 p-0.5 bg-luxury-black">
+                        <img src="https://instagram.fryk2-1.fna.fbcdn.net/v/t51.2885-19/473086810_1336624220839684_3565009483095954128_n.jpg?stp=dst-jpg_s150x150_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMxIn0&_nc_ht=instagram.fryk2-1.fna.fbcdn.net&_nc_cat=104&_nc_oc=Q6cZ2gE-1mTZKwBfH8pvygkQ4SVGZznpt5EKjmQ9zL_HOdoWKH60CqoMQqBrCJK5Xyik5EE&_nc_ohc=UoqJqKnZkdQQ7kNvwHqWPGA&_nc_gid=SIabSQNOMTgXT03j9nJRRQ&edm=APoiHPcBAAAA&ccb=7-5&oh=00_Af4xFsL3ncjzCXK6F_y2CacKhMthPLTrI5TaCTLiQM3_9g&oe=6A0FDC16&_nc_sid=22de04" alt="Cordel Logo" class="w-full h-full object-cover rounded-full">
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="font-serif text-lg tracking-widest text-white">CORDEL</span>
+                        <span class="text-[8px] tracking-[0.3em] text-gold-light uppercase -mt-1">Real Estate LLC</span>
+                    </div>
+                </div>
+                <p class="text-xs text-neutral-400 font-light leading-relaxed max-w-sm">
+                    Bespoke high-end modern property deployment and off-market corporate residential acquisition strategies throughout the state of Texas.
+                </p>
+            </div>
+
+            <!-- Column 2: Navigation Maps Links -->
+            <div class="md:col-span-3 space-y-4">
+                <h5 class="text-[10px] tracking-widest uppercase text-gold font-semibold">Asset Navigation</h5>
+                <ul class="text-xs space-y-2 text-neutral-400 font-light">
+                    <li><a href="#hero" class="hover:text-white transition-colors">Return Top</a></li>
+                    <li><a href="#about" class="hover:text-white transition-colors">Corporate Portfolio Profile</a></li>
+                    <li><a href="#neighborhoods" class="hover:text-white transition-colors">Regional Mapping Districts</a></li>
+                    <li><a href="#properties" class="hover:text-white transition-colors">Exclusive Active Registry</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 3: Immediate newsletter action fields -->
+            <div class="md:col-span-5 space-y-4">
+                <h5 class="text-[10px] tracking-widest uppercase text-gold font-semibold">The Off-Market Intelligence Feed</h5>
+                <p class="text-xs text-neutral-400 font-light leading-relaxed">Subscribe to obtain dynamic analytics updates regarding upcoming off-market residential assets in McAllen.</p>
+                <form id="newsletter-form" class="flex" onsubmit="handleNewsletterSubmit(event)">
+                    <input type="email" required placeholder="secure-email@domain.com" class="bg-luxury-black border border-neutral-800 text-xs tracking-wider px-4 py-3 text-white w-full rounded-none focus:outline-none focus:border-gold">
+                    <button type="submit" class="bg-gold text-luxury-black font-semibold text-xs uppercase tracking-widest px-6 hover:bg-gold-dark transition-colors rounded-none">Join</button>
+                </form>
+                <div id="newsletter-success" class="hidden text-[11px] text-emerald-400 font-light">Registration confirmed within database protocols.</div>
+            </div>
+        </div>
+
+        <!-- Copyright Compliance Markers and Micro-interactions -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 flex flex-col sm:flex-row justify-between items-center text-[10px] text-neutral-500 tracking-wider font-light gap-4">
+            <div>
+                &copy; 2026 Cordel Real Estate LLC. All Sovereign Enterprise Rights Reserved.
+            </div>
+            <div class="flex gap-6">
+                <a href="#" class="hover:text-gold transition-colors">Privacy Infrastructure Regulation</a>
+                <a href="#" class="hover:text-gold transition-colors">Equal Housing Architecture Compliance</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- INSTANT CLIENT ENGAGEMENT CHATBOT STICKY BUBBLE -->
+    <div class="fixed bottom-6 right-6 z-50 flex flex-col items-end">
+        <!-- Dialog Interface Container Frame -->
+        <div id="chatbot-window" class="w-80 h-96 bg-luxury-darkGray border border-gold-light/30 shadow-2xl rounded-none hidden flex-col mb-4 transition-all duration-300">
+            <div class="p-4 bg-luxury-black border-b border-gold-light/20 flex justify-between items-center">
+                <div class="flex items-center gap-2">
+                    <div class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></div>
+                    <span class="text-xs font-semibold tracking-widest uppercase text-gold">Cordel Core Advisor Bot</span>
+                </div>
+                <button onclick="toggleChatbot()" class="text-neutral-400 hover:text-white text-sm"><i class="fa-solid fa-minus"></i></button>
+            </div>
+            <!-- Messages Frame -->
+            <div id="chatbot-messages" class="flex-1 p-4 overflow-y-auto space-y-3 text-xs leading-relaxed font-light text-neutral-300">
+                <div class="bg-luxury-black p-3 border border-neutral-800 max-w-[85%]">
+                    Greetings. I am the virtual procurement matrix for Cordel Real Estate LLC. Are you tracking properties inside the McAllen, TX parameters today?
+                </div>
+            </div>
+            <!-- Interactive Options -->
+            <div class="p-2 border-t border-neutral-800 bg-luxury-black flex flex-wrap gap-2">
+                <button onclick="sendChatbotChoice('Search Listings')" class="text-[10px] bg-luxury-darkGray border border-neutral-800 px-2 py-1 hover:border-gold text-white">Search Listings</button>
+                <button onclick="sendChatbotChoice('Speak with Charles')" class="text-[10px] bg-luxury-darkGray border border-neutral-800 px-2 py-1 hover:border-gold text-white">Speak with Charles</button>
+                <button onclick="sendChatbotChoice('Office Location')" class="text-[10px] bg-luxury-darkGray border border-neutral-800 px-2 py-1 hover:border-gold text-white">Office Location</button>
+            </div>
+        </div>
+
+        <!-- Sticky Bubble Toggle Button Trigger Layout -->
+        <button onclick="toggleChatbot()" class="w-14 h-14 bg-gradient-to-r from-gold to-gold-dark text-luxury-black rounded-full flex items-center justify-center shadow-2xl hover:scale-105 transition-transform duration-300 focus:outline-none relative" aria-label="Open Live System Chat">
+            <i class="fa-solid fa-comment-dots text-xl"></i>
+            <span class="absolute top-0 right-0 w-3 h-3 bg-emerald-500 rounded-full border-2 border-luxury-black"></span>
+        </button>
+    </div>
+
+    <!-- NEWSLETTER INTENT-POP-UP MODAL FRAME -->
+    <div id="intent-modal" class="fixed inset-0 bg-luxury-black/95 backdrop-blur-md z-50 hidden items-center justify-center p-4">
+        <div class="bg-luxury-darkGray border border-gold max-w-md w-full p-8 text-center relative space-y-6">
+            <button onclick="closeIntentModal()" class="absolute top-4 right-4 text-neutral-400 hover:text-white text-lg"><i class="fa-solid fa-xmark"></i></button>
+            <span class="text-gold text-xs font-semibold uppercase tracking-[0.3em] block">Exclusive Advisory Invitation</span>
+            <h4 class="font-serif text-2xl text-white tracking-wide">Access Off-Market High-Yield Data Arrays</h4>
+            <p class="text-xs text-neutral-400 font-light leading-relaxed">
+                Unlock immediate entry protocols into our private unlisted database for high-tier real estate tracking in Texas. No spam, absolute sovereign discretion assured.
+            </p>
+            <form onsubmit="handleIntentSubmit(event)" class="space-y-3">
+                <input type="email" required placeholder="secure-email@domain.com" class="w-full bg-luxury-black border border-neutral-800 text-xs tracking-wider px-4 py-3 text-white focus:outline-none focus:border-gold rounded-none">
+                <button type="submit" class="w-full bg-gold text-luxury-black font-semibold text-xs uppercase tracking-widest py-3 transition-colors hover:bg-gold-dark rounded-none">Download Master Database Guide</button>
+            </form>
+            <div id="intent-success" class="hidden text-xs text-emerald-400">Database authorization dispatched to email vector.</div>
+        </div>
+    </div>
+
+
+    <!-- ADVANCED VANILLA PROGRAMMATIC JAVASCRIPT ANIMATIONS & LOGIC PIPELINES -->
+    <script>
+        // 1. Mobile Adaptive Menu Interaction Panel Toggle Logic
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const line1 = document.querySelector('.target-line-1');
+        const line2 = document.querySelector('.target-line-2');
+        const line3 = document.querySelector('.target-line-3');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            const isOpened = mobileMenu.classList.contains('translate-x-0');
+            if (isOpened) {
+                mobileMenu.classList.remove('translate-x-0');
+                mobileMenu.classList.add('translate-x-full');
+                line1.classList.remove('rotate-45', 'translate-y-[6px]', 'w-full');
+                line2.classList.remove('opacity-0');
+                line3.classList.remove('-rotate-45', '-translate-y-[6px]', 'w-full');
+            } else {
+                mobileMenu.classList.remove('translate-x-full');
+                mobileMenu.classList.add('translate-x-0');
+                line1.classList.add('rotate-45', 'translate-y-[6px]', 'w-full');
+                line2.classList.add('opacity-0');
+                line3.classList.add('-rotate-45', '-translate-y-[6px]', 'w-full');
+            }
+        });
+
+        // Close mobile nav on link clicking
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('translate-x-full');
+                line1.classList.remove('rotate-45', 'translate-y-[6px]', 'w-full');
+                line2.classList.remove('opacity-0');
+                line3.classList.remove('-rotate-45', '-translate-y-[6px]', 'w-full');
+            });
+        });
+
+        // 2. Sticky Glassmorphic Header Scaling Transition Effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('main-header');
+            if (window.scrollY > 50) {
+                header.classList.remove('h-24');
+                header.classList.add('h-16', 'shadow-xl');
+            } else {
+                header.classList.remove('h-16', 'shadow-xl');
+                header.classList.add('h-24');
+            }
+        });
+
+        // 3. Advanced JavaScript Intersection Observer Systems (Fade-In Reveal Pipeline)
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    // Trigger Count-Up logic if element contains statistic attributes
+                    const counters = entry.target.querySelectorAll('[data-count]');
+                    counters.forEach(counter => triggerCountUp(counter));
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15 });
+
+        revealElements.forEach(element => revealObserver.observe(element));
+
+        // Dynamic Statistics Count-Up Script Function Architecture
+        function triggerCountUp(element) {
+            const target = parseFloat(element.getAttribute('data-count'));
+            const isFloat = target % 1 !== 0;
+            let current = 0;
+            const duration = 2000; // 2 seconds execution
+            const stepTime = 20;
+            const totalSteps = duration / stepTime;
+            const increment = target / totalSteps;
+
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    element.innerText = isFloat ? target.toFixed(1) + 'B' : Math.floor(target) + '+';
+                    clearInterval(timer);
+                } else {
+                    element.innerText = isFloat ? current.toFixed(1) : Math.floor(current);
+                }
+            }, stepTime);
+        }
+
+        // 4. Image Lazy Loading Optimization Configuration Script Mock
+        document.addEventListener("DOMContentLoaded", () => {
+            const lazyImages = document.querySelectorAll('.lazy-load');
+            if ('IntersectionObserver' in window) {
+                const imageObserver = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const image = entry.target;
+                            // Simulate subtle luxury fade in processing
+                            image.style.opacity = '0';
+                            setTimeout(() => {
+                                image.style.transition = 'opacity 0.5s ease-in-out';
+                                image.style.opacity = '1';
+                            }, 50);
+                            imageObserver.unobserve(image);
+                        }
+                    });
+                });
+                lazyImages.forEach(img => imageObserver.observe(img));
+            }
+        });
+
+        // 5. Interactive Property Grid Dynamic Search Filtering Logic Engine
+        const searchForm = document.getElementById('search-filter-form');
+        searchForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const typeValue = document.getElementById('filter-type').value;
+            const priceValue = document.getElementById('filter-price').value;
+            const bedsValue = document.getElementById('filter-beds').value;
+
+            filterProperties(typeValue, priceValue, bedsValue);
+        });
+
+        function filterPropertyGrid(category) {
+            filterProperties(category, 'all', 'all');
+        }
+
+        function filterProperties(type, priceRange, beds) {
+            const cards = document.querySelectorAll('.property-card');
+            cards.forEach(card => {
+                const cardType = card.getAttribute('data-type');
+                const cardPrice = parseFloat(card.getAttribute('data-price'));
+                const cardBeds = parseInt(card.getAttribute('data-beds'));
+
+                let matchesType = (type === 'all' || cardType === type);
+                let matchesBeds = (beds === 'all' || cardBeds >= parseInt(beds));
+                let matchesPrice = true;
+
+                if (priceRange === '1-2') matchesPrice = (cardPrice >= 1.0 && cardPrice <= 2.5);
+                else if (priceRange === '2-4') matchesPrice = (cardPrice > 2.5 && cardPrice <= 4.5);
+                else if (priceRange === '4+') matchesPrice = (cardPrice > 4.5);
+
+                if (matchesType && matchesBeds && matchesPrice) {
+                    card.style.display = 'block';
+                    setTimeout(() => card.style.opacity = '1', 50);
+                } else {
+                    card.style.opacity = '0';
+                    setTimeout(() => card.style.display = 'none', 300);
+                }
+            });
+        }
+
+        // 6. Quick View Overlay Modal Framework Handlers
+        function openQuickView(title, price, loc, beds, baths, size, imgUrl) {
+            document.getElementById('modal-title').innerText = title;
+            document.getElementById('modal-price').innerText = price;
+            document.getElementById('modal-loc').innerText = loc;
+            document.getElementById('modal-beds').innerText = beds;
+            document.getElementById('modal-baths').innerText = baths;
+            document.getElementById('modal-size').innerText = size;
+            document.getElementById('modal-img').src = imgUrl;
+
+            const modal = document.getElementById('quick-view-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeQuickView() {
+            const modal = document.getElementById('quick-view-modal');
+            modal.classList.remove('flex');
+            modal.classList.add('hidden');
+        }
+
+        // 7. Testimonials Slider Platform Engine Mechanics
+        let activeSlideIndex = 0;
+        const slides = document.querySelectorAll('.testimonial-slide');
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.remove('opacity-100', 'translate-x-0');
+                slide.classList.add('opacity-0');
+                if (i === index) {
+                    slide.classList.remove('opacity-0');
+                    slide.classList.add('opacity-100', 'translate-x-0');
+                }
+            });
+        }
+
+        function nextSlide() {
+            activeSlideIndex = (activeSlideIndex + 1) % slides.length;
+            showSlide(activeSlideIndex);
+        }
+
+        function prevSlide() {
+            activeSlideIndex = (activeSlideIndex - 1 + slides.length) % slides.length;
+            showSlide(activeSlideIndex);
+        }
+
+        // Auto slide initialization rotation parameters
+        setInterval(nextSlide, 8000);
+
+        // 8. Instant Client Engagement Chatbot Interaction Sequences
+        function toggleChatbot() {
+            const win = document.getElementById('chatbot-window');
+            win.classList.toggle('hidden');
+            win.classList.toggle('flex');
+        }
+
+        function sendChatbotChoice(choice) {
+            const messagesContainer = document.getElementById('chatbot-messages');
+            
+            // Append User Response String
+            const userMsg = document.createElement('div');
+            userMsg.className = 'bg-gold text-luxury-black p-2 ml-auto max-w-[85%] text-right font-medium';
+            userMsg.innerText = choice;
+            messagesContainer.appendChild(userMsg);
+
+            // Trigger Automated Response System Layout Logic
+            setTimeout(() => {
+                const systemMsg = document.createElement('div');
+                systemMsg.className = 'bg-luxury-black p-3 border border-neutral-800 max-w-[85%]';
+                
+                if (choice === 'Search Listings') {
+                    systemMsg.innerText = "Understood. Re-routing tracking logic matrix. Please adjust the search bars integrated inside the main upper screen framework.";
+                } else if (choice === 'Speak with Charles') {
+                    systemMsg.innerText = "Connecting secure communication matrix. Direct line linkage verified at 956-432-7682 or secure dispatch channels via Charles@cordelrealestate.com.";
+                } else if (choice === 'Office Location') {
+                    systemMsg.innerText = "Our regional executive office parameters reside securely at 1300 N 10th St, Ste #450, McAllen, TX. Valet parking frameworks are explicitly pre-arranged for clients.";
+                }
+                
+                messagesContainer.appendChild(systemMsg);
+                messagesContainer.scrollTop = messagesContainer.scrollHeight;
+            }, 750);
+        }
+
+        // 9. Forms Transmission Routing Mock Layouts
+        function handleFormSubmission(event) {
+            event.preventDefault();
+            document.getElementById('acquisition-form').reset();
+            const validationNotice = document.getElementById('form-success');
+            validationNotice.classList.remove('hidden');
+            setTimeout(() => validationNotice.classList.add('hidden'), 6000);
+        }
+
+        function handleNewsletterSubmit(event) {
+            event.preventDefault();
+            event.target.reset();
+            const successNotice = document.getElementById('newsletter-success');
+            successNotice.classList.remove('hidden');
+            setTimeout(() => successNotice.classList.add('hidden'), 4000);
+        }
+
+        function handleIntentSubmit(event) {
+            event.preventDefault();
+            event.target.reset();
+            document.getElementById('intent-success').classList.remove('hidden');
+            setTimeout(() => closeIntentModal(), 2000);
+        }
+
+        // 10. Newsletter Intent-Pop-up Modal Automation Setup
+        function closeIntentModal() {
+            document.getElementById('intent-modal').classList.remove('flex');
+            document.getElementById('intent-modal').classList.add('hidden');
+        }
+
+        // Auto-trigger prompt overlay modal systematically on page exit intent simulation trace
+        setTimeout(() => {
+            const intentPopup = document.getElementById('intent-modal');
+            if (intentPopup) {
+                intentPopup.classList.remove('hidden');
+                intentPopup.classList.add('flex');
+            }
+        }, 35000); // Triggers automatically after 35 seconds of asset parsing activity
+    </script>
+</body>
+</html>
